@@ -1,4 +1,5 @@
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { getCurrentUser } from "@/app/auth/actions";
 import { signOut } from "@/app/auth/actions";
 
@@ -19,6 +20,9 @@ export default async function DashboardPage() {
               <h1 className="text-2xl font-bold text-primary">Job Pilot</h1>
             </div>
             <div className="flex items-center gap-4">
+              <Link href="/profile" className="text-sm text-gray-600 hover:text-gray-900">
+                Profile
+              </Link>
               <span className="text-sm text-gray-600">{user.email}</span>
               <form action={signOut}>
                 <button
