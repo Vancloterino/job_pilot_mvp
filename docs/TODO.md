@@ -11,17 +11,17 @@
 ### Week 1: Foundation & Setup
 
 #### Project Setup
-- [x] Initialize Next.js project with TypeScript
-- [x] Configure Tailwind CSS
-- [ ] Set up ESLint and Prettier
+- [x] Initialize Next.js project with TypeScript (Completed: 2025-12-28)
+- [x] Configure Tailwind CSS (Completed: 2025-12-28)
+- [x] Set up ESLint and Prettier (Completed: 2025-12-28)
 - [ ] Configure Husky for git hooks
-- [ ] Set up folder structure
-  - [ ] `/app` - Next.js app router pages
-  - [ ] `/components` - React components
-  - [ ] `/lib` - Utilities and helpers
-  - [ ] `/automation` - Playwright automation engine
-  - [ ] `/types` - TypeScript type definitions
-  - [ ] `/docs` - Documentation
+- [x] Set up folder structure (Completed: 2025-12-28)
+  - [x] `/app` - Next.js app router pages
+  - [x] `/components` - React components
+  - [x] `/lib` - Utilities and helpers
+  - [x] `/automation` - Playwright automation engine (folder created)
+  - [x] `/types` - TypeScript type definitions
+  - [x] `/docs` - Documentation
 
 #### Supabase Setup
 - [ ] Create Supabase account and project
