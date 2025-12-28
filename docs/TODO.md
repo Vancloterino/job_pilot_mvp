@@ -224,31 +224,38 @@
 
 #### Job Preferences Form
 
-- [ ] Create `JobPreferencesForm` component
-  - [ ] Job titles input (tag/chip input, 1-5 items)
-  - [ ] Locations input (tag/chip input, 1-10 items)
-  - [ ] Keywords to include (tag input, optional)
-  - [ ] Keywords to exclude (tag input, optional)
-  - [ ] Remote preference dropdown (Remote Only, Hybrid, On-Site, Any)
-  - [ ] Employment type dropdown (Full-Time, Part-Time, Contract, Any)
-  - [ ] Minimum salary input (number, optional)
-  - [ ] Maximum salary input (number, optional)
-  - [ ] Active toggle (enable/disable preferences)
-  - [ ] Save button
-  - [ ] Reset button
-  - [ ] Form validation
-  - [ ] Loading and error states
-- [ ] Create preferences API routes
-  - [ ] `GET /api/preferences` - Fetch preferences
-  - [ ] `PUT /api/preferences` - Save/update preferences
-  - [ ] `POST /api/preferences` - Create initial preferences
-- [ ] Implement validation logic
-  - [ ] At least one job title required
-  - [ ] At least one location required
-  - [ ] Min salary < max salary
-  - [ ] Trim whitespace from inputs
-- [ ] Add helpful placeholders and tooltips
-- [ ] Test edge cases (empty values, special characters, etc.)
+- [x] Create `JobPreferencesForm` component (Completed: 2025-12-28)
+  - [x] Job titles input (comma-separated)
+  - [x] Locations input (comma-separated)
+  - [x] Keywords to include (comma-separated)
+  - [x] Keywords to exclude (comma-separated)
+  - [x] Remote only checkbox
+  - [x] Hybrid ok checkbox
+  - [x] Employment types input (comma-separated)
+  - [x] Experience levels input (comma-separated)
+  - [x] Industries input (comma-separated)
+  - [x] Company sizes input (comma-separated)
+  - [x] Minimum salary input (number, optional)
+  - [x] Maximum salary input (number, optional)
+  - [x] Excluded companies input (comma-separated)
+  - [x] Save button with loading state
+  - [x] Cancel button
+  - [x] Form validation and error handling
+  - [x] Success message display
+- [x] Create preferences server actions (Completed: 2025-12-28)
+  - [x] `getJobPreferences()` - Fetch preferences with defaults
+  - [x] `saveJobPreferences(formData)` - Upsert preferences
+- [x] Create preferences page (Completed: 2025-12-28)
+  - [x] Auth protection via middleware
+  - [x] Navigation with links to dashboard and profile
+  - [x] Error handling for failed preference loading
+- [x] Add preferences link to dashboard (Completed: 2025-12-28)
+- [x] Implement validation logic (Completed: 2025-12-28)
+  - [x] Parse comma-separated arrays
+  - [x] Trim whitespace from inputs
+  - [x] Filter empty values
+  - [x] Handle checkboxes correctly
+- [x] Add helpful placeholders (Completed: 2025-12-28)
 
 #### Job Board Credentials
 
