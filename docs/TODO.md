@@ -11,10 +11,11 @@
 ### Week 1: Foundation & Setup
 
 #### Project Setup
+
 - [x] Initialize Next.js project with TypeScript (Completed: 2025-12-28)
 - [x] Configure Tailwind CSS (Completed: 2025-12-28)
 - [x] Set up ESLint and Prettier (Completed: 2025-12-28)
-- [ ] Configure Husky for git hooks
+- [x] Configure Husky for git hooks (Completed: 2025-12-28)
 - [x] Set up folder structure (Completed: 2025-12-28)
   - [x] `/app` - Next.js app router pages
   - [x] `/components` - React components
@@ -24,6 +25,7 @@
   - [x] `/docs` - Documentation
 
 #### Supabase Setup
+
 - [ ] Create Supabase account and project
 - [ ] Install Supabase CLI
 - [ ] Initialize local Supabase instance
@@ -34,6 +36,7 @@
   - [ ] `SUPABASE_SERVICE_ROLE_KEY`
 
 #### Database Schema
+
 - [ ] Create `users` table (handled by Supabase Auth)
 - [ ] Create `profiles` table
   - [ ] id (uuid, primary key)
@@ -91,6 +94,7 @@
 - [ ] Write migration scripts
 
 #### Storage Setup
+
 - [ ] Configure Supabase Storage bucket for resumes
 - [ ] Configure Supabase Storage bucket for cover letters
 - [ ] Set up storage policies (user can only access their own files)
@@ -101,6 +105,7 @@
 ### Week 2: Authentication & User Profile
 
 #### Authentication Pages
+
 - [ ] Create `/app/auth/signup` page
   - [ ] Email input with validation
   - [ ] Password input with strength indicator
@@ -130,6 +135,7 @@
   - [ ] `getCurrentUser()`
 
 #### Session Management
+
 - [ ] Implement session persistence
 - [ ] Implement automatic token refresh
 - [ ] Create protected route middleware
@@ -137,6 +143,7 @@
 - [ ] Redirect authenticated users away from auth pages
 
 #### Profile Management
+
 - [ ] Create `ProfileForm` component
   - [ ] Full name input
   - [ ] Phone number input (with formatting)
@@ -154,6 +161,7 @@
 ### Week 3: Resume Upload & Job Preferences
 
 #### Resume & Cover Letter Upload
+
 - [ ] Create `FileUpload` component
   - [ ] Drag-and-drop zone
   - [ ] File picker button
@@ -177,6 +185,7 @@
 - [ ] Test with various file types and sizes
 
 #### Job Preferences Form
+
 - [ ] Create `JobPreferencesForm` component
   - [ ] Job titles input (tag/chip input, 1-5 items)
   - [ ] Locations input (tag/chip input, 1-10 items)
@@ -204,6 +213,7 @@
 - [ ] Test edge cases (empty values, special characters, etc.)
 
 #### Job Board Credentials
+
 - [ ] Create `CredentialsForm` component
   - [ ] Platform selector (Indeed for now)
   - [ ] Username/email input
@@ -229,6 +239,7 @@
 ### Week 4: Automation Engine (Part 1)
 
 #### Playwright Setup
+
 - [ ] Install Playwright and dependencies
 - [ ] Configure Playwright for headless mode
 - [ ] Set up browser context and page management
@@ -236,6 +247,7 @@
 - [ ] Test basic navigation to Indeed
 
 #### Indeed Integration
+
 - [ ] Research Indeed Easy Apply flow
   - [ ] Document login flow
   - [ ] Document job search flow
@@ -259,6 +271,7 @@
 - [ ] Test search with various preferences
 
 #### Application Submission Logic (Part 1)
+
 - [ ] Create `AutomationEngine` class
   - [ ] Constructor accepting user credentials and preferences
   - [ ] `initialize()` - Set up browser
@@ -279,6 +292,7 @@
 ### Week 5: Automation Engine (Part 2) & Testing
 
 #### Application Submission Logic (Part 2)
+
 - [ ] Implement Easy Apply form handling
   - [ ] Click Easy Apply button
   - [ ] Detect form fields (name, email, phone, resume, cover letter)
@@ -305,6 +319,7 @@
   - [ ] Detect and handle rate limit responses
 
 #### Manual Trigger API
+
 - [ ] Create `POST /api/automation/run` endpoint
   - [ ] Validate user is authenticated
   - [ ] Check prerequisites (resume, preferences, credentials)
@@ -320,6 +335,7 @@
 - [ ] Handle concurrent runs (prevent multiple runs for same user)
 
 #### Testing
+
 - [ ] Create test Indeed account
 - [ ] Test full automation flow end-to-end
   - [ ] Login
@@ -344,6 +360,7 @@
 ### Week 6: Dashboard & Polish
 
 #### Application Dashboard
+
 - [ ] Create `/app/dashboard` page
   - [ ] Welcome message for new users
   - [ ] Stats cards component
@@ -386,6 +403,7 @@
   - [ ] `GET /api/applications/stats` - Dashboard statistics
 
 #### Application Detail Page
+
 - [ ] Create `/app/applications/[id]` page
   - [ ] Company name (large, bold)
   - [ ] Job title
@@ -403,6 +421,7 @@
   - [ ] Back to dashboard button
 
 #### Automation Trigger UI
+
 - [ ] Create `AutomationTrigger` component
   - [ ] Large "Run Auto-Apply" button
   - [ ] Prerequisites checklist
@@ -425,6 +444,7 @@
 - [ ] Implement real-time updates (SSE or polling)
 
 #### Navigation & Layout
+
 - [ ] Create app layout component
   - [ ] Top navigation bar
     - [ ] Logo
@@ -440,6 +460,7 @@
 - [ ] Add error boundaries for graceful error handling
 
 #### Onboarding Flow
+
 - [ ] Create `/app/onboarding` page
   - [ ] Multi-step wizard (4 steps)
   - [ ] Step 1: Welcome & upload resume
@@ -453,6 +474,7 @@
 - [ ] Mark onboarding complete in database
 
 #### Polish & UX Improvements
+
 - [ ] Add animations (page transitions, button clicks)
 - [ ] Add loading skeletons for data fetching
 - [ ] Improve form validation messages (user-friendly)
@@ -466,6 +488,7 @@
 - [ ] Performance optimization (lazy loading, code splitting)
 
 #### Documentation
+
 - [ ] Write README with setup instructions
 - [ ] Document environment variables
 - [ ] Create user guide (how to use the app)
@@ -473,6 +496,7 @@
 - [ ] Write contribution guidelines (if open source)
 
 #### Testing & QA
+
 - [ ] End-to-end testing with test users
   - [ ] Signup flow
   - [ ] Complete onboarding
@@ -495,6 +519,7 @@
 ### Week 7: Deployment Setup
 
 #### Infrastructure
+
 - [ ] Create Vercel account and project
 - [ ] Connect GitHub repository to Vercel
 - [ ] Configure Vercel project settings
@@ -521,6 +546,7 @@
   - [ ] Separate Railway/Render service
 
 #### CI/CD
+
 - [ ] Set up GitHub Actions
   - [ ] Lint on PR
   - [ ] Run tests on PR
@@ -529,6 +555,7 @@
 - [ ] Configure deployment notifications (Slack or email)
 
 #### Monitoring & Logging
+
 - [ ] Set up Sentry account
 - [ ] Install Sentry SDK in Next.js
 - [ ] Install Sentry SDK in automation service
@@ -544,6 +571,7 @@
 ### Week 8: Scheduled Automation & Reliability
 
 #### Scheduled Automation
+
 - [ ] Implement cron job trigger in Railway/Render
 - [ ] Create `scheduledAutomationJob` function
   - [ ] Fetch all active users
@@ -563,6 +591,7 @@
 - [ ] Test scheduled automation in production
 
 #### Retry Logic & Error Handling
+
 - [ ] Implement automatic retry for failed applications
   - [ ] Max 3 retries per application
   - [ ] Exponential backoff (1 min, 5 min, 15 min)
@@ -576,6 +605,7 @@
 - [ ] Create error logs dashboard (admin only)
 
 #### Health Checks & Monitoring
+
 - [ ] Create `/api/health` endpoint
   - [ ] Check database connection
   - [ ] Check Supabase storage
@@ -590,6 +620,7 @@
 ### Week 9: Notifications & User Engagement
 
 #### Email Infrastructure
+
 - [ ] Choose email service (Resend or SendGrid)
 - [ ] Set up email service account
 - [ ] Configure DNS (SPF, DKIM, DMARC)
@@ -603,6 +634,7 @@
   - [ ] Password reset template
 
 #### Email Notifications
+
 - [ ] Implement daily summary email
   - [ ] Trigger: After each automation run
   - [ ] Content: Applications submitted, success rate, top companies
@@ -627,6 +659,7 @@
   - [ ] Save preferences
 
 #### In-App Notifications
+
 - [ ] Create notification system
   - [ ] Database table for notifications
   - [ ] API endpoints (list, mark as read, delete)
@@ -645,6 +678,7 @@
 ### Week 10: Quality Controls & Guardrails
 
 #### Application Limits
+
 - [ ] Implement daily application limit enforcement
   - [ ] Check limit before each application
   - [ ] Stop automation when limit reached
@@ -657,6 +691,7 @@
 - [ ] Implement limit reset at midnight (user's timezone)
 
 #### Quality Filters
+
 - [ ] Implement minimum salary filter
   - [ ] Skip jobs below user's minimum
   - [ ] Log skipped jobs
@@ -675,6 +710,7 @@
   - [ ] Option to adjust preferences
 
 #### Application Preview (Optional)
+
 - [ ] Create preview mode toggle
   - [ ] If enabled, queue jobs for review before applying
   - [ ] Show preview list with approve/reject buttons
@@ -686,6 +722,7 @@
 ### Week 11: Feedback System & Pilot Preparation
 
 #### Feedback System
+
 - [ ] Create feedback database table
   - [ ] user_id, category, message, screenshot_url, created_at
 - [ ] Create `POST /api/feedback` endpoint
@@ -706,6 +743,7 @@
   - [ ] Reply to user (future)
 
 #### User Research Tools
+
 - [ ] Set up user interview scheduling (Calendly or similar)
 - [ ] Create feedback collection plan
   - [ ] Weekly check-in emails
@@ -718,6 +756,7 @@
   - [ ] Conversion funnel (signup → onboarding → first run)
 
 #### Pilot User Onboarding
+
 - [ ] Create invitation email template
 - [ ] Create welcome guide for pilot users
   - [ ] What to expect
@@ -732,6 +771,7 @@
 ### Week 12: Pilot Launch & Iteration
 
 #### Pre-Launch Checklist
+
 - [ ] Full QA pass on staging
 - [ ] Security audit
 - [ ] Performance testing
@@ -743,6 +783,7 @@
 - [ ] Legal review (optional, but recommended)
 
 #### Pilot Launch
+
 - [ ] Deploy to production
 - [ ] Smoke test critical paths
 - [ ] Invite first 10 pilot users
@@ -753,6 +794,7 @@
 - [ ] Collect initial feedback
 
 #### Iteration & Refinement
+
 - [ ] Weekly feedback review sessions
 - [ ] Prioritize and fix top bugs
 - [ ] Implement quick wins from feedback
@@ -776,6 +818,7 @@
 ### Week 13-14: Stripe Integration & Subscriptions
 
 #### Stripe Setup
+
 - [ ] Create Stripe account
 - [ ] Set up test mode
 - [ ] Configure products and pricing
@@ -788,6 +831,7 @@
 - [ ] Test webhooks locally (Stripe CLI)
 
 #### Subscription Flow
+
 - [ ] Create pricing page (`/pricing`)
   - [ ] Three-tier comparison table
   - [ ] Feature breakdown
@@ -832,6 +876,7 @@
 ### Week 15-16: Advanced Features (Paid Tiers)
 
 #### AI Cover Letters (Pro+)
+
 - [ ] Choose AI provider (OpenAI GPT-4 or Anthropic Claude)
 - [ ] Set up API account and keys
 - [ ] Create cover letter generation prompt
@@ -855,6 +900,7 @@
 - [ ] Implement rate limiting for AI generation
 
 #### Multiple Resumes (Premium)
+
 - [ ] Update database schema
   - [ ] Add `resumes` table (multiple per user)
   - [ ] resume_name, resume_url, is_default, created_at
@@ -868,6 +914,7 @@
 - [ ] Allow manual resume selection per application (future)
 
 #### Advanced Filters (Pro+)
+
 - [ ] Add company size filter
 - [ ] Add industry filter
 - [ ] Add experience level filter
@@ -877,6 +924,7 @@
 - [ ] Update automation logic to apply filters
 
 #### Custom Scheduling (Pro+)
+
 - [ ] Allow multiple schedules (e.g., weekdays vs. weekends)
 - [ ] Allow different limits per schedule
 - [ ] Pause on specific dates (vacation mode)
@@ -888,6 +936,7 @@
 ### Week 17-18: Multi-Platform Support
 
 #### LinkedIn Integration
+
 - [ ] Research LinkedIn Easy Apply flow
 - [ ] Implement LinkedIn login automation
 - [ ] Implement LinkedIn job search
@@ -898,10 +947,12 @@
 - [ ] Update automation to support LinkedIn
 
 #### ZipRecruiter Integration (Future)
+
 - [ ] Similar steps as LinkedIn
 - [ ] Document for future implementation
 
 #### Platform Management UI
+
 - [ ] Create platform management page
   - [ ] Cards for each platform (logo, status, connect button)
   - [ ] Toggle to enable/disable platforms
@@ -914,6 +965,7 @@
 ### Week 19-20: Marketing & Launch Preparation
 
 #### Landing Page
+
 - [ ] Create marketing landing page (`/`)
   - [ ] Hero section with clear value proposition
   - [ ] How it works (3-step visual)
@@ -941,6 +993,7 @@
   - [ ] CDN for assets
 
 #### Content Creation
+
 - [ ] Write blog post: "Why I Built Job Pilot"
 - [ ] Write blog post: "How to Automate Your Job Search"
 - [ ] Write blog post: "Job Application Stats Analysis"
@@ -954,6 +1007,7 @@
   - [ ] Short demo clips
 
 #### Product Hunt Preparation
+
 - [ ] Create Product Hunt account
 - [ ] Plan launch date (Tuesday-Thursday recommended)
 - [ ] Prepare Product Hunt assets
@@ -971,6 +1025,7 @@
 ### Week 21: Launch & Growth
 
 #### Public Launch
+
 - [ ] Deploy final version to production
 - [ ] Launch on Product Hunt
 - [ ] Post on Reddit (r/jobs, r/cscareerquestions, r/jobsearchhacks)
@@ -982,6 +1037,7 @@
 - [ ] Fix critical bugs immediately
 
 #### Post-Launch
+
 - [ ] Collect feedback from new users
 - [ ] Monitor key metrics daily
   - [ ] Signups
@@ -1000,6 +1056,7 @@
 ## Ongoing: Maintenance & Growth
 
 ### Monthly Tasks
+
 - [ ] Review metrics and KPIs
 - [ ] User feedback analysis
 - [ ] Bug fixes and maintenance
@@ -1010,12 +1067,14 @@
 - [ ] Customer interviews
 
 ### Quarterly Goals
+
 - [ ] Add new job platform
 - [ ] Launch new major feature
 - [ ] Expand to new user segment
 - [ ] Revenue milestone ($5k → $10k → $20k MRR)
 
 ### Long-Term Vision
+
 - [ ] Mobile app (React Native)
 - [ ] Interview scheduling automation
 - [ ] Application tracking integrations (ATS)
@@ -1029,6 +1088,7 @@
 ## Notes & Decisions
 
 ### Open Questions
+
 - What's the optimal daily limit for free tier? (5 vs. 10)
 - Should we require email confirmation on signup?
 - Should we build admin dashboard in Phase 1 or Phase 2?
@@ -1036,6 +1096,7 @@
 - Should we support custom cover letter templates in Phase 1?
 
 ### Risks to Monitor
+
 - Job board UI changes
 - Account bans
 - Scalability issues
@@ -1043,6 +1104,7 @@
 - Competition
 
 ### Success Criteria (End of Phase 1)
+
 - [ ] 5+ test users successfully using the product
 - [ ] 80%+ application success rate
 - [ ] < 5 critical bugs
@@ -1052,12 +1114,14 @@
 ---
 
 **Legend:**
+
 - [ ] Not started
 - [x] Completed
 - [~] In progress
 - [!] Blocked
 
 **Priority Levels:**
+
 - P0: Must have (blocks launch)
 - P1: Should have (important but not blocking)
 - P2: Nice to have (can be deferred)
