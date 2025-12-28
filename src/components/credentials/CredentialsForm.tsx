@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { saveCredentials, type Platform } from "@/app/credentials/actions";
+import { saveCredentials, testCredentials, type Platform } from "@/app/credentials/actions";
 
 interface CredentialsFormProps {
   onSuccess?: () => void;
@@ -9,13 +9,16 @@ interface CredentialsFormProps {
 
 export default function CredentialsForm({ onSuccess }: CredentialsFormProps) {
   const [loading, setLoading] = useState(false);
+  const [testing, setTesting] = useState(false);
   const [error, setError] = useState<string>("");
+  const [success, setSuccess] = useState<string>("");
   const [showPassword, setShowPassword] = useState(false);
   const [platform, setPlatform] = useState<Platform>("indeed");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError("");
+    setSuccess("");
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
@@ -30,6 +33,31 @@ export default function CredentialsForm({ onSuccess }: CredentialsFormProps) {
       setShowPassword(false);
     } else {
       setError(result.error || "Failed to save credentials");
+    }
+  };
+
+  const handleTestConnection = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    setError("");
+    setSuccess("");
+    setTesting(true);
+
+    const form = e.currentTarget.closest("form");
+    if (!form) return;
+
+    const formData = new FormData(form);
+    const result = await testCredentials(formData);
+
+    setTesting(false);
+
+    if (result.success) {
+      setSuccess("✓ Connection successful! Credentials verified and saved.");
+      onSuccess?.();
+      // Reset form
+      form.reset();
+      setShowPassword(false);
+    } else {
+      setError(result.error || "Connection test failed");
     }
   };
 
@@ -166,11 +194,26 @@ export default function CredentialsForm({ onSuccess }: CredentialsFormProps) {
             </div>
           )}
 
+          {/* Success Message */}
+          {success && (
+            <div className="mt-4 bg-green-50 border border-green-200 rounded-md p-3">
+              <p className="text-sm text-green-600">{success}</p>
+            </div>
+          )}
+
           {/* Action Buttons */}
           <div className="mt-6 flex justify-end gap-4">
             <button
+              type="button"
+              onClick={handleTestConnection}
+              disabled={testing || loading || platform !== "indeed"}
+              className="px-6 py-2 border border-primary text-primary rounded-md hover:bg-primary/10 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+            >
+              {testing ? "Testing..." : "Test Connection"}
+            </button>
+            <button
               type="submit"
-              disabled={loading || platform !== "indeed"}
+              disabled={loading || testing || platform !== "indeed"}
               className="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
             >
               {loading ? "Saving..." : "Save Credentials"}

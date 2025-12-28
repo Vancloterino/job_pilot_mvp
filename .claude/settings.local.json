@@ -17,7 +17,8 @@
       "Bash(chmod:*)",
       "Bash(npx supabase:*)",
       "Bash(psql:*)",
-      "Bash(node scripts/verify-schema.mjs:*)"
+      "Bash(node scripts/verify-schema.mjs:*)",
+      "Bash(npx playwright install:*)"
     ]
   }
 }
