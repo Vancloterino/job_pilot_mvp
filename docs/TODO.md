@@ -26,14 +26,14 @@
 
 #### Supabase Setup
 
-- [ ] Create Supabase account and project
-- [ ] Install Supabase CLI
-- [ ] Initialize local Supabase instance
-- [ ] Configure Supabase client in Next.js
-- [ ] Set up environment variables
-  - [ ] `NEXT_PUBLIC_SUPABASE_URL`
-  - [ ] `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-  - [ ] `SUPABASE_SERVICE_ROLE_KEY`
+- [ ] Create Supabase account and project (Optional: Can use local instance with Docker)
+- [x] Install Supabase CLI (Completed: 2025-12-28)
+- [x] Initialize local Supabase instance (Completed: 2025-12-28)
+- [x] Configure Supabase client in Next.js (Completed: 2025-12-28)
+- [x] Set up environment variables (Completed: 2025-12-28)
+  - [x] `NEXT_PUBLIC_SUPABASE_URL`
+  - [x] `NEXT_PUBLIC_SUPABASE_ANON_KEY`
+  - [x] `SUPABASE_SERVICE_ROLE_KEY`
 
 #### Database Schema
 
