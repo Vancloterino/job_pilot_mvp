@@ -289,8 +289,15 @@
   - [x] Navigation with links to dashboard, profile, preferences
   - [x] Integrated CredentialsForm and CredentialsList
 - [x] Add credentials link to dashboard (Completed: 2025-12-28)
-- [ ] Implement credential testing (lightweight Indeed login check)
-- [ ] Add "Test Connection" button to verify credentials
+- [x] Implement credential testing (Completed: 2025-12-28)
+  - [x] Installed Playwright and Chromium browser
+  - [x] Created indeed-tester module with testIndeedCredentials function
+  - [x] Lightweight login check using headless browser
+  - [x] Error handling for timeouts, invalid credentials, connection issues
+- [x] Add "Test Connection" button to verify credentials (Completed: 2025-12-28)
+  - [x] Button in CredentialsForm
+  - [x] Success/error feedback
+  - [x] Credentials marked as verified with timestamp
 
 ---
 
