@@ -121,10 +121,11 @@
 
 #### Storage Setup
 
-- [ ] Configure Supabase Storage bucket for resumes
-- [ ] Configure Supabase Storage bucket for cover letters
-- [ ] Set up storage policies (user can only access their own files)
-- [ ] Test file upload/download
+- [x] Configure Supabase Storage bucket for resumes (Completed: 2025-12-28)
+- [x] Configure Supabase Storage bucket for cover letters (Completed: 2025-12-28)
+- [x] Set up storage policies (user can only access their own files) (Completed: 2025-12-28)
+- [x] Create storage helper functions (uploadFile, deleteFile, getFileUrl, listUserFiles, downloadFile, validateFile) (Completed: 2025-12-28)
+- [x] Create test page for storage functionality (Completed: 2025-12-28)
 
 ---
 
