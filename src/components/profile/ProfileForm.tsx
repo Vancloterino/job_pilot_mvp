@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { updateProfile, type ProfileData } from "@/app/profile/actions";
 import ResumeUpload from "./ResumeUpload";
+import CoverLetterUpload from "./CoverLetterUpload";
 
 interface ProfileFormProps {
   initialData: ProfileData;
@@ -189,6 +190,19 @@ export default function ProfileForm({ initialData, userEmail, userId }: ProfileF
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Resume</h3>
           <ResumeUpload
             currentResumeUrl={initialData.resume_url}
+            userId={userId}
+            onUploadSuccess={() => router.refresh()}
+          />
+        </div>
+
+        {/* Cover Letter Section */}
+        <div className="p-6 border-b border-gray-200">
+          <h3 className="text-lg font-semibold text-gray-900 mb-4">Cover Letter</h3>
+          <p className="text-sm text-gray-500 mb-4">
+            Upload a cover letter template to use with your applications (optional)
+          </p>
+          <CoverLetterUpload
+            currentCoverLetterUrl={initialData.cover_letter_url}
             userId={userId}
             onUploadSuccess={() => router.refresh()}
           />

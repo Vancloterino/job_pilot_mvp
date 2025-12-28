@@ -12,6 +12,7 @@ export interface ProfileData {
   current_title: string | null;
   years_of_experience: number | null;
   resume_url: string | null;
+  cover_letter_url: string | null;
 }
 
 export interface ProfileResult {
@@ -57,6 +58,7 @@ export async function getProfile(): Promise<ProfileResult> {
         current_title: data.current_title,
         years_of_experience: data.years_of_experience,
         resume_url: data.resume_url,
+        cover_letter_url: data.cover_letter_url,
       },
     };
   } catch (error) {
@@ -139,6 +141,48 @@ export async function updateResumeUrl(resumeUrl: string): Promise<ProfileResult>
     const { error } = await supabase
       .from("profiles")
       .update({ resume_url: resumeUrl })
+      .eq("id", user.id);
+
+    if (error) {
+      return {
+        success: false,
+        error: error.message,
+      };
+    }
+
+    revalidatePath("/profile");
+
+    return {
+      success: true,
+    };
+  } catch (error) {
+    return {
+      success: false,
+      error: error instanceof Error ? error.message : "Unknown error occurred",
+    };
+  }
+}
+
+/**
+ * Update cover letter URL in profile
+ */
+export async function updateCoverLetterUrl(coverLetterUrl: string): Promise<ProfileResult> {
+  try {
+    const supabase = await createClient();
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+
+    if (!user) {
+      return {
+        success: false,
+        error: "Not authenticated",
+      };
+    }
+
+    const { error } = await supabase
+      .from("profiles")
+      .update({ cover_letter_url: coverLetterUrl })
       .eq("id", user.id);
 
     if (error) {
