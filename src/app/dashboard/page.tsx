@@ -23,6 +23,9 @@ export default async function DashboardPage() {
               <Link href="/profile" className="text-sm text-gray-600 hover:text-gray-900">
                 Profile
               </Link>
+              <Link href="/preferences" className="text-sm text-gray-600 hover:text-gray-900">
+                Preferences
+              </Link>
               <span className="text-sm text-gray-600">{user.email}</span>
               <form action={signOut}>
                 <button

@@ -39,6 +39,7 @@ export async function middleware(request: NextRequest) {
       request.nextUrl.pathname.startsWith("/applications") ||
       request.nextUrl.pathname.startsWith("/settings") ||
       request.nextUrl.pathname.startsWith("/profile") ||
+      request.nextUrl.pathname.startsWith("/preferences") ||
       request.nextUrl.pathname.startsWith("/onboarding"))
   ) {
     const url = request.nextUrl.clone();
