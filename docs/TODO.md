@@ -264,25 +264,33 @@
 
 #### Job Board Credentials
 
-- [ ] Create `CredentialsForm` component
-  - [ ] Platform selector (Indeed for now)
-  - [ ] Username/email input
-  - [ ] Password input with show/hide toggle
-  - [ ] "Test Connection" button
-  - [ ] Save credentials button
-  - [ ] Success/error messages
-  - [ ] Security disclaimer text
-- [ ] Create credentials API routes
-  - [ ] `POST /api/credentials` - Save credentials (encrypted)
-  - [ ] `GET /api/credentials` - List connected platforms
-  - [ ] `DELETE /api/credentials/:platform` - Remove credentials
-  - [ ] `POST /api/credentials/test` - Test credentials validity
-- [ ] Implement encryption for credentials
-  - [ ] Use crypto library for AES encryption
-  - [ ] Store encryption key in environment variable
-  - [ ] Never log or expose passwords
+- [x] Create `CredentialsForm` component (Completed: 2025-12-28)
+  - [x] Platform selector (Indeed supported, others coming soon)
+  - [x] Username/email input
+  - [x] Password input with show/hide toggle
+  - [x] Save credentials button with loading state
+  - [x] Success/error messages
+  - [x] Security disclaimer text with encryption details
+- [x] Create credentials server actions (Completed: 2025-12-28)
+  - [x] `saveCredentials(formData)` - Save/update credentials (encrypted)
+  - [x] `getCredentials()` - List connected platforms with decrypted usernames
+  - [x] `deleteCredentials(credentialId)` - Remove credentials
+- [x] Implement encryption for credentials (Completed: 2025-12-28)
+  - [x] Created encryption helpers using Web Crypto API (AES-256-GCM)
+  - [x] Encryption key stored in environment variable (ENCRYPTION_KEY)
+  - [x] Passwords encrypted before storage, never logged or exposed
+  - [x] Usernames also encrypted for additional security
+- [x] Create CredentialsList component (Completed: 2025-12-28)
+  - [x] Display saved credentials with platform and username
+  - [x] Show verification status (if verified)
+  - [x] Delete button with confirmation
+- [x] Create credentials page (Completed: 2025-12-28)
+  - [x] Auth protection via middleware
+  - [x] Navigation with links to dashboard, profile, preferences
+  - [x] Integrated CredentialsForm and CredentialsList
+- [x] Add credentials link to dashboard (Completed: 2025-12-28)
 - [ ] Implement credential testing (lightweight Indeed login check)
-- [ ] Add security warnings and explanations
+- [ ] Add "Test Connection" button to verify credentials
 
 ---
 
