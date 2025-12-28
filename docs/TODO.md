@@ -177,17 +177,27 @@
 
 #### Profile Management
 
-- [ ] Create `ProfileForm` component
-  - [ ] Full name input
-  - [ ] Phone number input (with formatting)
-  - [ ] Email display (read-only)
-  - [ ] Save button
-  - [ ] Loading and error states
-- [ ] Create profile API routes
-  - [ ] `GET /api/profile` - Fetch user profile
-  - [ ] `PUT /api/profile` - Update user profile
-- [ ] Implement profile creation on signup (trigger)
-- [ ] Add form validation (Zod or Yup)
+- [x] Create `ProfileForm` component (Completed: 2025-12-28)
+  - [x] Full name input
+  - [x] Phone number input
+  - [x] Email display (read-only)
+  - [x] Location input
+  - [x] Current title input
+  - [x] Years of experience input
+  - [x] LinkedIn URL input
+  - [x] Portfolio URL input
+  - [x] Resume display section
+  - [x] Save button
+  - [x] Loading and error states
+  - [x] Success message display
+- [x] Create profile server actions (Completed: 2025-12-28)
+  - [x] `getProfile()` - Fetch user profile
+  - [x] `updateProfile(formData)` - Update user profile
+  - [x] `updateResumeUrl(url)` - Update resume URL
+- [x] Implement profile creation on signup (trigger in migration) (Completed: 2025-12-28)
+- [x] Create profile page with navigation (Completed: 2025-12-28)
+- [x] Add profile link to dashboard (Completed: 2025-12-28)
+- [x] Add profile route protection in middleware (Completed: 2025-12-28)
 
 ---
 
