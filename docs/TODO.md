@@ -133,41 +133,47 @@
 
 #### Authentication Pages
 
-- [ ] Create `/app/auth/signup` page
-  - [ ] Email input with validation
-  - [ ] Password input with strength indicator
-  - [ ] Confirm password field
-  - [ ] Terms of service checkbox
-  - [ ] Sign up button with loading state
-  - [ ] Error handling and display
-  - [ ] Redirect to onboarding after signup
-- [ ] Create `/app/auth/login` page
-  - [ ] Email input
-  - [ ] Password input with show/hide toggle
-  - [ ] "Remember me" option (optional)
-  - [ ] Login button with loading state
-  - [ ] "Forgot password?" link
-  - [ ] Redirect to dashboard after login
-- [ ] Create `/app/auth/reset-password` page
+- [x] Create `/app/auth/signup` page (Completed: 2025-12-28)
+  - [x] Email input with validation
+  - [x] Password input with strength indicator
+  - [x] Confirm password field
+  - [x] Terms of service checkbox
+  - [x] Sign up button with loading state
+  - [x] Error handling and display
+  - [x] Redirect to dashboard after signup
+- [x] Create `/app/auth/login` page (Completed: 2025-12-28)
+  - [x] Email input
+  - [x] Password input
+  - [x] "Remember me" option
+  - [x] Login button with loading state
+  - [x] "Forgot password?" link (placeholder)
+  - [x] Redirect to dashboard after login
+- [ ] Create `/app/auth/forgot-password` page
   - [ ] Email input
   - [ ] Send reset link button
   - [ ] Success message
   - [ ] Handle reset token from email
-- [ ] Create auth helper functions
-  - [ ] `signUp(email, password)`
-  - [ ] `signIn(email, password)`
-  - [ ] `signOut()`
-  - [ ] `resetPassword(email)`
-  - [ ] `updatePassword(newPassword)`
-  - [ ] `getCurrentUser()`
+- [x] Create auth server actions (Completed: 2025-12-28)
+  - [x] `signUp(formData)`
+  - [x] `signIn(formData)`
+  - [x] `signOut()`
+  - [x] `getCurrentUser()`
 
 #### Session Management
 
-- [ ] Implement session persistence
-- [ ] Implement automatic token refresh
-- [ ] Create protected route middleware
-- [ ] Redirect unauthenticated users to login
-- [ ] Redirect authenticated users away from auth pages
+- [x] Implement session persistence (Completed: 2025-12-28)
+- [x] Implement automatic token refresh (handled by middleware) (Completed: 2025-12-28)
+- [x] Create protected route middleware (Completed: 2025-12-28)
+- [x] Redirect unauthenticated users to login (Completed: 2025-12-28)
+- [x] Redirect authenticated users away from auth pages (Completed: 2025-12-28)
+
+#### Dashboard
+
+- [x] Create basic dashboard page (Completed: 2025-12-28)
+  - [x] Navigation bar with user email
+  - [x] Sign out button
+  - [x] Quick stats cards (placeholders)
+  - [x] Getting started guide
 
 #### Profile Management
 
