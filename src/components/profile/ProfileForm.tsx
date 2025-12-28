@@ -1,14 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { updateProfile, type ProfileData } from "@/app/profile/actions";
+import ResumeUpload from "./ResumeUpload";
 
 interface ProfileFormProps {
   initialData: ProfileData;
   userEmail: string;
+  userId: string;
 }
 
-export default function ProfileForm({ initialData, userEmail }: ProfileFormProps) {
+export default function ProfileForm({ initialData, userEmail, userId }: ProfileFormProps) {
+  const router = useRouter();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string>("");
   const [success, setSuccess] = useState(false);
@@ -183,61 +187,11 @@ export default function ProfileForm({ initialData, userEmail }: ProfileFormProps
         {/* Resume Section */}
         <div className="p-6 border-b border-gray-200">
           <h3 className="text-lg font-semibold text-gray-900 mb-4">Resume</h3>
-          <div className="space-y-4">
-            {initialData.resume_url ? (
-              <div className="flex items-center justify-between p-4 bg-gray-50 rounded-md">
-                <div className="flex items-center gap-3">
-                  <svg
-                    className="w-8 h-8 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
-                  <div>
-                    <p className="text-sm font-medium text-gray-900">Resume uploaded</p>
-                    <p className="text-xs text-gray-500">Click to view or download</p>
-                  </div>
-                </div>
-                <a
-                  href={initialData.resume_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-4 py-2 text-sm text-primary hover:bg-primary/10 rounded-md transition-colors"
-                >
-                  View
-                </a>
-              </div>
-            ) : (
-              <div className="flex items-center justify-center p-8 border-2 border-dashed border-gray-300 rounded-md">
-                <div className="text-center">
-                  <svg
-                    className="mx-auto h-12 w-12 text-gray-400"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
-                    />
-                  </svg>
-                  <p className="mt-2 text-sm text-gray-600">No resume uploaded</p>
-                  <p className="text-xs text-gray-500">
-                    Upload your resume to use in job applications
-                  </p>
-                </div>
-              </div>
-            )}
-          </div>
+          <ResumeUpload
+            currentResumeUrl={initialData.resume_url}
+            userId={userId}
+            onUploadSuccess={() => router.refresh()}
+          />
         </div>
 
         {/* Error/Success Messages */}

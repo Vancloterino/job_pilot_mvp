@@ -42,7 +42,11 @@ export default async function ProfilePage() {
         </div>
 
         {profileResult.success && profileResult.data ? (
-          <ProfileForm initialData={profileResult.data} userEmail={user.email || ""} />
+          <ProfileForm
+            initialData={profileResult.data}
+            userEmail={user.email || ""}
+            userId={user.id}
+          />
         ) : (
           <div className="bg-red-50 border border-red-200 rounded-lg p-6">
             <p className="text-red-600">Failed to load profile: {profileResult.error}</p>
