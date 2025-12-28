@@ -205,27 +205,22 @@
 
 #### Resume & Cover Letter Upload
 
-- [ ] Create `FileUpload` component
-  - [ ] Drag-and-drop zone
-  - [ ] File picker button
-  - [ ] File type validation (PDF, DOCX only)
-  - [ ] File size validation (max 5MB)
-  - [ ] Upload progress indicator
-  - [ ] Preview uploaded file (name, size, upload date)
-  - [ ] Replace file button
-  - [ ] Delete file button
-  - [ ] Download file button
-- [ ] Create file upload API routes
-  - [ ] `POST /api/profile/resume` - Upload resume
-  - [ ] `POST /api/profile/cover-letter` - Upload cover letter
-  - [ ] `DELETE /api/profile/resume` - Delete resume
-  - [ ] `DELETE /api/profile/cover-letter` - Delete cover letter
-  - [ ] `GET /api/profile/resume` - Download resume
-  - [ ] `GET /api/profile/cover-letter` - Download cover letter
-- [ ] Implement file validation on server
-- [ ] Implement virus scanning (ClamAV or similar) - optional for MVP
-- [ ] Handle upload errors gracefully
-- [ ] Test with various file types and sizes
+- [x] Create `ResumeUpload` component (Completed: 2025-12-28)
+  - [x] File picker button
+  - [x] File type validation (PDF, DOC, DOCX)
+  - [x] File size validation (max 5MB)
+  - [x] Upload progress feedback
+  - [x] Preview uploaded file
+  - [x] Delete file button with confirmation
+  - [x] View/download file button
+- [x] Implement resume upload functionality (Completed: 2025-12-28)
+  - [x] Uses existing storage helpers (uploadFile, deleteFile)
+  - [x] Updates profile.resume_url via server action
+  - [x] Integrated into profile page
+- [x] Implement file validation (client-side) (Completed: 2025-12-28)
+- [x] Handle upload errors gracefully (Completed: 2025-12-28)
+- [ ] Create cover letter upload component (similar to resume)
+- [ ] Implement drag-and-drop zone enhancement
 
 #### Job Preferences Form
 
