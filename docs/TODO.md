@@ -219,7 +219,12 @@
   - [x] Integrated into profile page
 - [x] Implement file validation (client-side) (Completed: 2025-12-28)
 - [x] Handle upload errors gracefully (Completed: 2025-12-28)
-- [ ] Create cover letter upload component (similar to resume)
+- [x] Create cover letter upload component (Completed: 2025-12-28)
+  - [x] Added cover_letter_url column to profiles table
+  - [x] Created CoverLetterUpload component (reuses uploadFile, deleteFile, validateFile)
+  - [x] Added updateCoverLetterUrl server action
+  - [x] Integrated into ProfileForm with description
+  - [x] Uses cover-letters storage bucket
 - [ ] Implement drag-and-drop zone enhancement
 
 #### Job Preferences Form
